@@ -105,4 +105,5 @@ GitHub owned me though no matter how complicated I built it.
 Some just have an opaque overlay, others have just the words click me with an invisible button, some when you touch text, it will redirect you to my website or a .json file you can also host.
 
 Happy hacking hackers.
+
 DeadmanXXXII
