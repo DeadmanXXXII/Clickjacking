@@ -1,13 +1,12 @@
-# Welcome to DeadmanXXXII's Clickjacking Lab Guide
+# Welcome to DeadmanXXXII's Lab Guide
 
-Welcome to my lab guide! 
-Below, you'll find a detailed walkthrough for setting up and using various tools and techniques. Dive in and explore!
+Welcome to my lab guide! Below, you'll find instructions for setting up and using various tools and techniques, including a detailed walkthrough for experimenting with clickjacking using Nethunter. Dive in and explore!
 
 ## Getting Started
 
-Today, I built my own lab, which you can find detailed under this section. If you're interested in experimenting with clickjacking using Nethunter, follow the steps below. You can also check the third-last photo to see the nearly opaque overlay in the hosted files.
+Today, I set up my own lab. For a detailed walkthrough of the process, including the nearly opaque overlay in the hosted files, follow the steps below.
 
-**Prerequisites:** You need Nethunter, which is available for both Android and iPhone. There are two ways to set this up:
+**Prerequisites:** You need Nethunter, available for both Android and iPhone. Here are the two methods for installation:
 
 ### Method 1: Installation via David Bombal's Video
 
@@ -42,7 +41,7 @@ bash
 Copy code
 nethunter
 nh -r
-Note: This step might take a while, depending on your phone model. For Google Pixel 3a and 4, it took approximately 4 days.
+Note: This process may take a while, especially on models like the Google Pixel 3a and 4.
 
 Update and Install Necessary Packages:
 
@@ -65,7 +64,7 @@ bash
 Copy code
 mkdir self_hosting
 cd self_hosting
-Download Files:
+Download Initial HTML File:
 
 bash
 Copy code
@@ -81,7 +80,7 @@ Start a Local HTTP Server:
 bash
 Copy code
 python3 -m http.server 8000
-Open your phone’s browser and navigate to http://0.0.0.0:8000/ to see the page. It should display "How to make tea."
+Open your phone’s browser and navigate to http://0.0.0.0:8000/ to view the page. It should display "How to make tea."
 
 Update CSS File:
 
@@ -95,7 +94,7 @@ Update HTML for Clickjacking:
 bash
 Copy code
 wget -u https://github.dev/DeadmanXXXII/attack/blame/main/clickjackingselfhost.html -O index.html
-Ensure the href or src attributes point to http://0.0.0.0:8000/ or update them accordingly. If needed, use nano or vim to edit index.html.
+Ensure that href or src attributes point to http://0.0.0.0:8000/ or adjust them as needed. If required, use nano or vim to edit index.html.
 
 Verify Python Version:
 
@@ -109,26 +108,16 @@ Restart the Local HTTP Server:
 bash
 Copy code
 python3 -m http.server 8000
-Visit http://0.0.0.0:8000/ in your browser. You should see a "Click Me" button. If not, the attack might not be compatible with your phone’s OS. You can try other clickjacking examples from GitHub or modify the existing ones.
+Visit http://0.0.0.0:8000/ in your browser. You should see a "Click Me" button. If it doesn’t appear, the attack might not be compatible with your phone’s OS. You can try other clickjacking examples from GitHub or modify the existing ones.
 
 Happy Hacking!
 
-Feel free to explore different clickjacking techniques. Some overlays might be opaque, while others may use invisible buttons or redirect to other sites or files.
+Feel free to explore different clickjacking techniques. Some might use opaque overlays, invisible buttons, or redirections to other sites or files.
 
-Note: Be cautious when testing different attacks as running them improperly could have legal consequences.
+Note: Be cautious when testing different attacks, as improper use may have legal consequences.
 
 Additional Resources
 Labelled Video: I’ll upload a video demonstration once I'm home and figure out how to upload videos in GitHub.dev.
-Enjoy your experiments and have fun hacking!
+Enjoy your experiments and happy hacking!
 
 - DeadmanXXXII
-
-css
-Copy code
-
-Feel free to adjust any specific details or URLs to better fit your needs.
-
-
-
-
-
