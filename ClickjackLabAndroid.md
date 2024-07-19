@@ -1,120 +1,108 @@
 # Welcome to DeadmanXXXII's Lab Guide
 
-Welcome to my lab guide! Below, you'll find instructions for setting up and using various tools and techniques, including a detailed walkthrough for experimenting with clickjacking using Nethunter. Dive in and explore!
+Clickjacked by Nethunter. 
+Works well and in the third last photo you can see my almost opaque overlay in the hosted files.
 
-## Getting Started
+To do this lab you have to have nethunter this can be for android or iPhone there are two ways to do this that works.
 
-Today, I set up my own lab. For a detailed walkthrough of the process, including the nearly opaque overlay in the hosted files, follow the steps below.
+1: Getting started:
 
-**Prerequisites:** You need Nethunter, available for both Android and iPhone. Here are the two methods for installation:
-
-### Method 1: Installation via David Bombal's Video
-
-1. **Find David Bombal on YouTube:**
-   - [Watch his Nethunter installation video here](https://youtu.be/KxOGyuGq0Ts?si=a3Mdc-4VtLAgnFB1). The link is also available in `FreeU.txt`.
-
-##### Method 2: Manual Installation
-
-1. **Install Kali Nethunter Full Version**
-
-2. **Install Dependencies in Termux:**
-   ```bash
-   pkg update -y && pkg install wget -y
-
-3. **Download the Installation Script:**
-```bash
-wget https://raw.githubusercontent.com/rc-chuah/Kali-Nethunter-In-Termux/master/install-nethunter-full-termux
-
-4. **Give Execution Permission:**
-   ```bash
-   chmod +x install-nethunter-full-termux
-
-Run the Script:
-
-bash
-Copy code
-./install-nethunter-full-termux
-Start Kali Nethunter:
-
-bash
-Copy code
-nethunter
-nh -r
-Note: This process may take a while, especially on models like the Google Pixel 3a and 4.
-
-Update and Install Necessary Packages:
-
-bash
-Copy code
-dpkg --configure -a
-apt update && upgrade -y
-apt install python3
-apt install wget -y
-Credited to Offensive Security
-
-Nethunter Clickjacked
 Lab Begins:
 
-If you don't have a code editor, use GitHub.dev, which provides a VSCode-like editor in your web browser.
+One: find David Bombal on YouTube the link is in FreeU.txt find his Nethunter installation video and follow the steps.
+https://youtu.be/KxOGyuGq0Ts?si=a3Mdc-4VtLAgnFB1
 
-Create Lab Directory:
+Two: My way
+Steps For Installation
+Install Kali Nethunter Full Version
+Install Dependencies In Termux 
+pkg update -y && pkg install wget -y
 
-bash
-Copy code
+Download Script In HOME 
+wget https://raw.githubusercontent.com/rc-chuah/Kali-Nethunter-In-Termux/master/install-nethunter-full-termux
+
+Give Execution Permission 
+chmod +x install-nethunter-full-termux
+
+Run Script 
+./install-nethunter-full-termux
+
+Now Just Start Kali Nethunter nethunter
+nh -r
+
+Credited To Offensive Security
+
+dpkg --configure -a
+(this took my phones 4 days Google pixels 3a + 4)
+apt update && upgrade -y
+(this takes a while)
+apt install python3
+apt install wget -y
+
+Lab Ends.
+
+2: Nethunter Clickjacked:
+
+Lab Begins:
+
+If you don't have a code editor use GitHub.dev it comes with vsstudio code in the Web browser editor to alter things. 
+
+firstly make the lab directory
 mkdir self_hosting
+
 cd self_hosting
-Download Initial HTML File:
 
-bash
-Copy code
+then you need to get these files 
 wget -u https://github.dev/DeadmanXXXII/5-day-coding-challenge/blame/main/Day%205%20challenge%203.html -O index.html
-Check the Downloaded File:
 
-bash
-Copy code
 ls
+
 cat index.html
-Start a Local HTTP Server:
 
-bash
-Copy code
+then
 python3 -m http.server 8000
-Open your phone’s browser and navigate to http://0.0.0.0:8000/ to view the page. It should display "How to make tea."
 
-Update CSS File:
+Into a web browser on your phone. 
+Make sure not to close the app just change so it runs in the background and go to URL: http://0.0.0.0:8000/ you should see the page. How to make tea.
+Once that's correct hit the command below.
 
-bash
-Copy code
+Ctrl C
+
+then
+
 wget -u https://github.dev/DeadmanXXXII/5-day-coding-challenge/blame/main/Day%205%20challenge%203.css -O index.css
-Refresh your browser at http://0.0.0.0:8000/ to see the updated page with new icons and orange headers.
 
-Update HTML for Clickjacking:
-
-bash
-Copy code
-wget -u https://github.dev/DeadmanXXXII/attack/blame/main/clickjackingselfhost.html -O index.html
-Ensure that href or src attributes point to http://0.0.0.0:8000/ or adjust them as needed. If required, use nano or vim to edit index.html.
-
-Verify Python Version:
-
-bash
-Copy code
-python3 --version
-Ensure it’s version 3.11.0 or above.
-
-Restart the Local HTTP Server:
-
-bash
-Copy code
 python3 -m http.server 8000
-Visit http://0.0.0.0:8000/ in your browser. You should see a "Click Me" button. If it doesn’t appear, the attack might not be compatible with your phone’s OS. You can try other clickjacking examples from GitHub or modify the existing ones.
 
-Happy Hacking!
-Feel free to explore different clickjacking techniques. Some might use opaque overlays, invisible buttons, or redirections to other sites or files.
+go back to your web browser https://0.0.0.0:8000/ it should have changed slightly and is now responding on two of the icons and has orange headers.
 
-Note: Be cautious when testing different attacks, as improper use may have legal consequences.
+Ctrl C again to stop the server again.
 
-Enjoy your experimenting!!
+Now this time you are copying 
 
-- DeadmanXXXII
+wget -u https://github.dev/DeadmanXXXII/attack/blame/main/clickjackingselfhost.html -O index.html
 
+ensure href=http://0.0.0.0:8000/
+or.    src=same as above unless it ends with .img or .jpeg that is the hosted picture which you can change for a malicious one at a later lab.
+If not
+nano index.html
+or
+vim index.html
+and paste that in above if it has quotes put it in quotes.
+
+python3 --version make sure it says over 3.11.0
+
+python3 -m http.server 8000
+
+Go back to your browser and as you scroll through the page and the click me button should appear.
+
+Lab complete.
+
+If the button hasn't appeared then that attack doesn't work with your particular phone OS only change the GitHub link for other clickjacking attacks running any others especially incorrectly can land you in jail.
+
+Change the attacks as mentioned above they all only need the same alterations they will say WhatsApp or GitHub from bug hunting. They say they have defense what'sapp didn't. 
+GitHub owned me though no matter how complicated I built it. 
+Some just have an opaque overlay, others have just the words click me with an invisible button, some when you touch text, it will redirect you to my website or a .json file you can also host.
+
+Happy hacking hackers.
+DeadmanXXXII
