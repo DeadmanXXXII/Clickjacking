@@ -21,7 +21,6 @@ Today, I set up my own lab. For a detailed walkthrough of the process, including
    ```bash
    pkg update -y && pkg install wget -y
 Download the Installation Script:
-
 '''bash
 wget https://raw.githubusercontent.com/rc-chuah/Kali-Nethunter-In-Termux/master/install-nethunter-full-termux
 Give Execution Permission:
