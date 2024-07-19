@@ -20,26 +20,29 @@ Today, I set up my own lab. For a detailed walkthrough of the process, including
 2. **Install Dependencies in Termux:**
    ```bash
    pkg update -y && pkg install wget -y
-Download the Installation Script:
+
+3. **Download the Installation Script:**
 '''bash
 wget https://raw.githubusercontent.com/rc-chuah/Kali-Nethunter-In-Termux/master/install-nethunter-full-termux
 Give Execution Permission:
 
+4. **next**
 '''bash
 chmod +x install-nethunter-full-termux
 Run the Script:
-
+5. **next**
 '''bash
 ./install-nethunter-full-termux
-Start Kali Nethunter:
 
+### Start Kali Nethunter:
+
+1. **Firstly:**
 '''bash
 nethunter
 nh -r
 Note: This process may take a while, especially on models like the Google Pixel 3a and 4.
 
-Update and Install Necessary Packages:
-
+2. **Update and Install Necessary Packages:**
 '''bash
 dpkg --configure -a
 apt update && upgrade -y
@@ -52,46 +55,41 @@ Credited to Offensive Security
 
 If you don't have a code editor, use GitHub.dev, which provides a VSCode-like editor in your web browser.
 
-Create Lab Directory:
-
+1. **Create Lab Directory:**
 '''bash
 mkdir self_hosting
 cd self_hosting
-Download Initial HTML File:
 
+**Download Initial HTML File:**
 '''bash
 wget -u https://github.dev/DeadmanXXXII/5-day-coding-challenge/blame/main/Day%205%20challenge%203.html -O index.html
-Check the Downloaded File:
 
+**Check the Downloaded File:**
 '''bash
 ls
 cat index.html
-Start a Local HTTP Server:
 
+**Start a Local HTTP Server:**
 '''bash
 python3 -m http.server 8000
 Open your phone’s browser and navigate to http://0.0.0.0:8000/ to view the page. It should display "How to make tea."
 
-Update CSS File:
-
+**Update CSS File:**
 '''bash
 wget -u https://github.dev/DeadmanXXXII/5-day-coding-challenge/blame/main/Day%205%20challenge%203.css -O index.css
 Refresh your browser at http://0.0.0.0:8000/ to see the updated page with new icons and orange headers.
 
-### Update HTML for Clickjacking:
-
+**Update HTML for Clickjacking:**
 '''bash
 wget -u https://github.dev/DeadmanXXXII/attack/blame/main/clickjackingselfhost.html -O index.html
 Ensure that href or src attributes point to http://0.0.0.0:8000/ or adjust them as needed. If required, use nano or vim to edit index.html.
 
-Verify Python Version:
-
+**Verify Python Version:**
 '''bash
 python3 --version
 Ensure it’s version 3.11.0 or above.
 
-Restart the Local HTTP Server:
-
+**Restart the Local HTTP Server:**
 '''bash
 python3 -m http.server 8000
 Visit http://0.0.0.0:8000/ in your browser. You should see a "Click Me" button. If it doesn’t appear, the attack might not be compatible with your phone’s OS. You can try other clickjacking examples from GitHub or modify the existing ones.
