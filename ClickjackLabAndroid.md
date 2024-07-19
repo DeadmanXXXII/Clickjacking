@@ -13,7 +13,7 @@ Today, I set up my own lab. For a detailed walkthrough of the process, including
 1. **Find David Bombal on YouTube:**
    - [Watch his Nethunter installation video here](https://youtu.be/KxOGyuGq0Ts?si=a3Mdc-4VtLAgnFB1). The link is also available in `FreeU.txt`.
 
-### Method 2: Manual Installation
+##### Method 2: Manual Installation
 
 1. **Install Kali Nethunter Full Version**
 
