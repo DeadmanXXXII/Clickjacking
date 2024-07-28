@@ -9,7 +9,7 @@ To do this lab you have to have nethunter this can be for android or iPhone ther
 
 Lab Begins:
 
-One: find David Bombal on YouTube the link is in FreeU.txt find his Nethunter installation video and follow the steps.
+One: find David Bombal on YouTube the link is in Free education FreeU.txt find his Nethunter installation video and follow the steps.
 https://youtu.be/KxOGyuGq0Ts?si=a3Mdc-4VtLAgnFB1
 
 Two: My way
